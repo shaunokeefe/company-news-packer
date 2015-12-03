@@ -15,14 +15,18 @@
       "source_ami": "ami-936d9d93",
       "instance_type": "t2.small",
       "ssh_username": "ubuntu",
-      "ami_name": "company-news-test-server-{{timestamp}}"
+      "ami_name": "company-news-lb-{{timestamp}}"
     }
   ],
 
   "provisioners" : [
+    {
+      "type": "shell",
+      "inline": ["sudo apt-get update -y"]
+    },
     { "type": "chef-solo",
       "cookbook_paths": [ "berks-cookbooks/" ],
-      "run_list": [ "company-news::default" ]
+      "run_list": [ "company-news::nginx" ]
     }
   ]
 }
