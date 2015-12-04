@@ -26,7 +26,8 @@
     },
     { "type": "chef-solo",
       "cookbook_paths": [ "berks-cookbooks/" ],
-      "run_list": [ "company-news::nginx" ]
+      "run_list": [ "company-news::nginx" ],
+      "data_bags_path": "data_bags"
     }
   ]
 }
