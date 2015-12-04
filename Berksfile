@@ -1,3 +1,3 @@
 source 'https://supermarket.opscode.com'
 
-cookbook 'company-news', :path => '../company-news'
+cookbook 'company-news', git: 'https://github.com/shaunokeefe/company-news.git'
